@@ -9,16 +9,16 @@ class Category {
         $this->list_products = $list_products;
     }
 
-    public function getName() {
+    public function getCategoryName() {
         return $this->name;
+    }
+
+    public function getCategoryProducts() {
+        return $this->list_products;
     }
 
     public function setName($name) {
         $this->name = $name;
-    }
-
-    public function getListProducts() {
-        return $this->list_products;
     }
 
     public function addProduct($product) {
@@ -33,12 +33,12 @@ class Category {
 }
 
 $category = new Category("Электроника", ["Телефон", "Ноутбук"]);
-echo "Категория: " . $category->getName() . "\n";
-echo "Продукты: " . implode(", ", $category->getListProducts()) . "\n";
+echo "Категория: " . $category->getCategoryName() . "\n";
+echo "Продукты: " . implode(", ", $category->getCategoryProducts()) . "\n";
 
 $category->addProduct("Планшет");
-echo "Обновленный список продуктов: " . implode(", ", $category->getListProducts()) . "\n";
+echo "Обновленный список продуктов: " . implode(", ", $category->getCategoryProducts()) . "\n";
 
 $category->removeProduct("Телефон");
-echo "Список продуктов после удаления: " . implode(", ", $category->getListProducts()) . "\n";
+echo "Список продуктов после удаления: " . implode(", ", $category->getCategoryProducts()) . "\n";
 ?>
